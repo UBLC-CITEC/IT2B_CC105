@@ -1,0 +1,4 @@
+Download the csv file from the link: 
+https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes/resource/b5a431d2-4832-43a6-9334-86b62bdb033f
+
+Make sure to upload it to your Database
