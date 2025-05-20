@@ -1,0 +1,18 @@
+SELECT COUNT(*) FROM exercise_02.vehicle_collision;
+SELECT 
+    SUBSTRING(CRASH_DATE, 7 , 4) AS crash_year,
+    ON_STREET_NAME AS location,
+    COUNT(*) AS total_incidents,
+    SUM(CAST(NUMBER_OF_PERSONS_KILLED AS UNSIGNED)) AS total_killed
+FROM exercise_02.vehicle_collision
+WHERE ON_STREET_NAME IS NOT NULL
+GROUP BY location, crash_year
+ORDER BY total_killed DESC, crash_year DESC
+LIMIT 100;
+
+
+SELECT VEHICLE_TYPE_CODE_1, COUNT(*) AS incident_count
+FROM exercise_02.vehicle_collision
+GROUP BY VEHICLE_TYPE_CODE_1
+ORDER BY incident_count DESC
+LIMIT 1;
